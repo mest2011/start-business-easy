@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://mest2011.github.io/tools/",
+  "homepage": "https://mest2011.github.io/start-business-easy/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
