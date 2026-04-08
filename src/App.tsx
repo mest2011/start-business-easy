@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import WelcomeScreen from './pages/WelcomeScreen';
 import DashboardLayout from './layouts/DashboardLayout';
 import CentralDashboard from './pages/CentralDashboard';

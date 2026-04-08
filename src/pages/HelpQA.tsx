@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface QAItem {
   id: number;
@@ -85,9 +86,9 @@ const HelpQA: React.FC = () => {
             <h3 className="text-xl font-bold text-white mb-2">Ainda com Dúvidas Estratégicas?</h3>
             <p className="text-neutral-400 text-sm">Contate nossa equipe de Suporte Especializado para mentoria direta.</p>
           </div>
-          <a href="/dashboard/suporte" className="px-6 py-3 bg-white text-neutral-900 rounded-lg font-semibold hover:bg-neutral-100 transition-colors whitespace-nowrap">
+          <Link to="/dashboard/suporte" className="px-6 py-3 bg-white text-neutral-900 rounded-lg font-semibold hover:bg-neutral-100 transition-colors whitespace-nowrap">
             Acessar Suporte Ao Vivo
-          </a>
+          </Link>
         </div>
 
       </div>
