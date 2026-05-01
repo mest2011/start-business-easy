@@ -11,12 +11,15 @@ import DocsArea from './pages/DocsArea';
 import HelpQA from './pages/HelpQA';
 import SupportChat from './pages/SupportChat';
 import UserProfileArea from './pages/UserProfileArea';
+import OnboardingFlow from './pages/OnboardingFlow';
+
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/welcome" element={<WelcomeScreen />} />
+        <Route path="/onboarding" element={<OnboardingFlow />} />
         
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<CentralDashboard />} />

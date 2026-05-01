@@ -28,7 +28,7 @@ const WelcomeScreen: React.FC = () => {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button 
-                  onClick={() => navigate('/dashboard')}
+                  onClick={() => navigate('/onboarding')}
                   className="px-8 py-4 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition-colors">
                   Começar Agora
                 </button>
@@ -104,7 +104,7 @@ const WelcomeScreen: React.FC = () => {
           </div>
 
           <div className="bg-white border-2 border-neutral-200 rounded-2xl p-8 lg:p-10">
-            <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); navigate('/dashboard'); }}>
+            <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); navigate('/onboarding'); }}>
               <div>
                 <label className="block text-sm text-neutral-900 mb-2">
                   Nome do Negócio *
