@@ -58,7 +58,7 @@ export const SocialPostWizard: React.FC<WizardProps> = ({ isOpen, onClose, onSuc
     if (!title || !content) return;
     setIsSubmitting(true);
     try {
-      const channels = Object.entries(selectedPlatforms).filter(([_, isSelected]) => isSelected).map(([id]) => id);
+      const channels = Object.entries(selectedPlatforms).filter(([_, isSelected]) => isSelected).map(([id]) => id) as ('facebook' | 'instagram' | 'twitter' | 'linkedin' | 'tiktok')[];
       
       const finalStatus = status === 'published' && scheduleDate ? 'scheduled' : status;
 
