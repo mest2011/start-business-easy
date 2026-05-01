@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { api } from '../services/api';
 import type { SocialPost } from '../types';
-import { Modal } from '../components/ui/Modal';
+import { SocialPostWizard } from '../components/SocialPostWizard';
 import { PageSkeleton } from '../components/ui/PageSkeleton';
 import { downloadCSV } from '../utils/export';
 
@@ -105,10 +105,6 @@ const MidiasSociais: React.FC = () => {
   const [filter, setFilter] = useState<'all' | 'draft' | 'published' | 'scheduled'>('all');
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Form State
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-
   useEffect(() => {
     const init = async () => {
       setLoading(true);
@@ -130,21 +126,6 @@ const MidiasSociais: React.FC = () => {
 
   const handleExport = () => {
     downloadCSV(posts, 'Relatorio_Social');
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!title || !content) return;
-    await api.social.createPost({
-      title,
-      content,
-      status: 'draft',
-      channels: ['instagram'] 
-    });
-    setIsModalOpen(false);
-    setTitle('');
-    setContent('');
-    loadPosts();
   };
 
   if (loading) return <PageSkeleton />;
@@ -483,22 +464,8 @@ const MidiasSociais: React.FC = () => {
           </div>
         </section>
 
-        {/* Modal Structure Maintained */}
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Criar Rascunho">
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-sm text-neutral-900 mb-1">Título</label>
-              <input required value={title} onChange={e => setTitle(e.target.value)} type="text" className="w-full px-3 py-2 border border-neutral-300 rounded focus:border-neutral-900 focus:outline-none" placeholder="Ex: Aviso aos Clientes" />
-            </div>
-            <div>
-              <label className="block text-sm text-neutral-900 mb-1">Conteúdo</label>
-              <textarea required value={content} onChange={e => setContent(e.target.value)} rows={4} className="w-full px-3 py-2 border border-neutral-300 rounded focus:border-neutral-900 focus:outline-none" placeholder="Mensagem do post..."></textarea>
-            </div>
-            <button type="submit" className="w-full mt-4 bg-neutral-900 text-white py-3 rounded-lg hover:bg-neutral-800 transition-colors font-medium">
-              Salvar como Rascunho
-            </button>
-          </form>
-        </Modal>
+        {/* Post Creation Wizard */}
+        <SocialPostWizard isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSuccess={loadPosts} />
 
       </div>
     </div>
