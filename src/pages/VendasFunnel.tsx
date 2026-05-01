@@ -4,6 +4,7 @@ import type { SalesLead } from '../types';
 import { Modal } from '../components/ui/Modal';
 import { PageSkeleton } from '../components/ui/PageSkeleton';
 import { downloadCSV } from '../utils/export';
+import { ComingSoonOverlay } from '../components/ui/ComingSoonOverlay';
 
 const VendasFunnel: React.FC = () => {
   const [leads, setLeads] = useState<SalesLead[]>([]);
@@ -61,7 +62,8 @@ const VendasFunnel: React.FC = () => {
   if (loading) return <PageSkeleton />;
 
   return (
-    <div className="w-full px-4 lg:px-8 py-8 h-full flex flex-col">
+    <ComingSoonOverlay>
+      <div className="w-full px-4 lg:px-8 py-8 h-full flex flex-col">
       <div className="w-full max-w-7xl mx-auto flex-1 flex flex-col">
         
         {/* Page Header */}
@@ -374,6 +376,7 @@ const VendasFunnel: React.FC = () => {
 
       </div>
     </div>
+    </ComingSoonOverlay>
   );
 };
 

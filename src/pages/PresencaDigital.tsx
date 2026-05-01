@@ -1,8 +1,10 @@
 import React from 'react';
+import { ComingSoonOverlay } from '../components/ui/ComingSoonOverlay';
 
 const PresencaDigital: React.FC = () => {
   return (
-    <div className="w-full px-4 lg:px-8 py-8 h-full flex flex-col">
+    <ComingSoonOverlay>
+      <div className="w-full px-4 lg:px-8 py-8 h-full flex flex-col">
       <div className="w-full max-w-7xl mx-auto flex-1 flex flex-col">
         
         {/* Page Header */}
@@ -558,6 +560,7 @@ const PresencaDigital: React.FC = () => {
 
       </div>
     </div>
+    </ComingSoonOverlay>
   );
 };
 

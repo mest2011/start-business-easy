@@ -4,6 +4,7 @@ import type { Transaction } from '../types';
 import { Modal } from '../components/ui/Modal';
 import { downloadCSV } from '../utils/export';
 import { PageSkeleton } from '../components/ui/PageSkeleton';
+import { ComingSoonOverlay } from '../components/ui/ComingSoonOverlay';
 
 const Financeiro: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -58,7 +59,8 @@ const Financeiro: React.FC = () => {
   if (loading) return <PageSkeleton />;
 
   return (
-    <div className="w-full px-4 lg:px-8 py-8 h-full flex flex-col">
+    <ComingSoonOverlay>
+      <div className="w-full px-4 lg:px-8 py-8 h-full flex flex-col">
       <div className="w-full max-w-7xl mx-auto flex-1 flex flex-col">
         
         {/* Page Header */}
@@ -559,6 +561,7 @@ const Financeiro: React.FC = () => {
 
       </div>
     </div>
+    </ComingSoonOverlay>
   );
 };
 

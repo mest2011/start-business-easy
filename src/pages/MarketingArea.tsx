@@ -4,6 +4,7 @@ import type { Campaign } from '../types';
 import { Modal } from '../components/ui/Modal';
 import { downloadCSV } from '../utils/export';
 import { PageSkeleton } from '../components/ui/PageSkeleton';
+import { ComingSoonOverlay } from '../components/ui/ComingSoonOverlay';
 
 const MarketingArea: React.FC = () => {
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
@@ -62,7 +63,8 @@ const MarketingArea: React.FC = () => {
   if (loading) return <PageSkeleton />;
 
   return (
-    <div className="w-full px-4 lg:px-8 py-8">
+    <ComingSoonOverlay>
+      <div className="w-full px-4 lg:px-8 py-8">
       <div className="w-full max-w-7xl mx-auto">
         
         {/* Page Header */}
@@ -485,6 +487,7 @@ const MarketingArea: React.FC = () => {
         </Modal>
       </div>
     </div>
+    </ComingSoonOverlay>
   );
 };
 
