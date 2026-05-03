@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Typewriter } from "../components/ui/Typewriter";
 
 const FAQItem: React.FC<{ question: string; answer: string }> = ({
   question,
@@ -106,13 +107,29 @@ const WelcomeScreen: React.FC = () => {
                   </div>
                 </div>
 
-                <h1 className="text-4xl lg:text-5xl xl:text-6xl text-neutral-900 mb-6 leading-tight">
-                  Simplifique seu negócio em uma plataforma
+                <h1
+                  className="text-4xl lg:text-5xl xl:text-6xl font-extralight text-neutral-900 mb-6 min-h-[100px] lg:min-h-[140px]"
+                  style={{ lineHeight: "normal" }}
+                >
+                  Gerencie suas <br />
+                  <span className="font-bold">
+                    <Typewriter
+                      words={[
+                        "redes sociais",
+                        "vendas",
+                        "métricas",
+                        "presenças digitais",
+                      ]}
+                      className="text-neutral-900"
+                    />
+                  </span>
+                  <br />
+                  em um só lugar.
                 </h1>
 
                 <p className="text-lg lg:text-xl text-neutral-600 mb-8 leading-relaxed">
-                  Gerencie mídias sociais, vendas, finanças e presença digital.
-                  Tudo em um só lugar, feito para MEIs e freelancers.
+                  Simplifique seu negócio em uma plataforma. Tudo em um só
+                  lugar, feito para MEIs e freelancers.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
