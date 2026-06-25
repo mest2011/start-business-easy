@@ -2,6 +2,12 @@
 
 O **Empreendedor Digital** é uma Single Page Application (SPA) moderna desenvolvida para centralizar a gestão de negócios digitais. O portal oferece ferramentas completas para marketing, vendas, finanças e presença online, com foco em usabilidade e design premium.
 
+<p align="center">
+  <a href="https://mest2011.github.io/start-business-easy/" target="_blank">
+    <img src="https://img.shields.io/badge/%F0%9F%9A%80%20Acessar%20o%20App%20ao%20Vivo-Empreendedor%20Digital-2563eb?style=for-the-badge&logoColor=white" alt="Ver o app rodando" />
+  </a>
+</p>
+
 ---
 
 ## Tecnologias Utilizadas
